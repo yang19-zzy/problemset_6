@@ -1,5 +1,12 @@
 import _ from "lodash";
 import moment from "moment";
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+ReactDOM.render(
+    
+    document.getElementById('switchModifyNum')
+);
 
 setInterval(function() {
     const myColor = document.getElementById("notice");
