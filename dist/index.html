@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Game Store</title>
+    <script src="bundle.js" defer></script>
+    <link rel="stylesheet" href="../src/style.css">
+  </head>
+  <body>
+    <header>
+      <h1>Game Store</h1>
+      <nav>
+          <ul>
+              <li><a href="./index.html" class="button button1">Home</a></li>
+              <li><a href="./about.html" class="button">About</a></li>
+              <li id="cart-icon"><i class="fas fa-shopping-cart"></i><div id="num-items"></div></li>
+          </ul>
+      </nav>
+  </header>
+  <main>
+    <article>
+        <h3>Welcome to <em>Game Store</em>!</h3>
+        <div id="notice" class="color1">We are a new online game store and we are still in the process of building our online platform. This is a test version. <em>DO NOT PURCHASE ANYTHING ON THIS PAGE!</em>
+            <div id="close">Close [X]</div>
+        </div>
+        <div id="promotion">
+        </div>
+    </article>
+
+    <section>
+        <div id="switch" class="item console">
+            <img src="../src/switch.jpeg" alt="Switch">
+            <h4 class="name">Switch</h4>
+            <h4 class="price">$298.80</h4>
+            <div class="modify-num">
+                <input type="submit" value="-" class="minus" id="switch-minus">
+                <div id="switch-num">0</div>
+                <input type="submit" value="+" class="add" id="switch-add">
+            </div>
+            <!-- <button>Add to Cart</button> -->
+            
+        </div>
+
+        <div id="fit-ring" class="item game">
+            <img src="../src/ringfit.jpeg" alt="RingFit Adventure">
+            <h4 class="name">RingFit Adventure</h4>
+            <h4 class="price">$78.80</h4>
+            <div class="modify-num">
+                <input type="submit" value="-" class="minus" id="ringfit-minus">
+                <div id="ringfit-num">0</div>
+                <input type="submit" value="+" class="add" id="ringfit-add">
+            </div>
+            <!-- <button>Add to Cart</button> -->
+
+        </div>
+
+        <div class="item more-items" style="display: none;">
+            <img src="more.png" alt="Coming soon">
+            <h4>Coming soon...</h4>
+
+        </div>
+
+        <div id="cart">
+            <div id="number-of-items-in-cart">Your Cart</div>
+            <div id="num-block">Number of Items -<div id="num-items"></div></div>
+            <div id="total-block">Total - <div id="total"></div></div>
+        </div>
+
+    </section>
+    
+  </main>
+  <footer>
+      <div id="contect">
+          <form action="response.html" onsubmit="popup(this)">
+              <input name="message" id="message" cols="30" rows="1" placeholder="Leave a message...">
+              <button id="test"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+          </form>
+          <br>
+          <p><a id="about" href="./about.html">About</a></p>
+      </div>
+      <div id="copyright">
+          <p>Game Store@2021</p>
+      </div>
+  </footer>
+  </body>
+</html>
+
