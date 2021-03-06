@@ -112,3 +112,17 @@ var diff = "Only " + promotionDate.diff(now, 'days') + " days away!!!";
 // console.log(diff);
 
 document.getElementById("promotion").innerHTML = "Final Sale!!! " + diff;
+
+
+// function popup(form) {
+//     window.open('', 'formpopup', 'width=400,height=200');
+//     form.target = 'formpopup';
+//     document.getElementById("message").value = "";
+// }
+
+document.getElementById("test").addEventListener('submit',(event)=>{
+    window.open('', 'formpopup', 'width=400,height=200');
+    event.target = 'formpopup';
+    document.getElementById("message").value = "";
+});
+
