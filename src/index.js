@@ -1,10 +1,10 @@
 import _ from "lodash";
 import moment from "moment";
 import { library, dom } from "@fortawesome/fontawesome-svg-core";
-import { faCheck } from "@fortawesome/free-solid-svg-icons/faCheck";
+import { fas } from "@fortawesome/free-solid-svg-icons";
 
-library.add(faCheck);
-dom.watch();
+library.add(fas);
+dom.i2svg();
 
 setInterval(function() {
     const myColor = document.getElementById("notice");
