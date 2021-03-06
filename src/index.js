@@ -1,9 +1,10 @@
 import _ from "lodash";
 import moment from "moment";
-import React from 'react';
-import ReactDOM from 'react-dom';
+import { library, dom } from "@fortawesome/fontawesome-svg-core";
+import { faCheck } from "@fortawesome/free-solid-svg-icons/faCheck";
 
-
+library.add(faCheck);
+dom.watch();
 
 setInterval(function() {
     const myColor = document.getElementById("notice");
@@ -33,93 +34,72 @@ let switchNum = document.getElementById("switch-num");
 
 // ringfit
 
-document.addEventListener('turbolinks:load', () => {
-    const addbtn_ringfit = document.getElementById("ringfit-add");
-    addbtn_ringfit.addEventListener("blur", () => {
-        let i = parseInt(ringfitNum.innerHTML);
-        ringfitNum.innerHTML = i+1;
-        console.log("ringfitNum",ringfitNum.innerHTML);
-        let x = parseInt(ringfitNum.innerHTML);
-        let y = parseInt(switchNum.innerHTML);
-        numItems.innerText =  x + y;
-        total.innerText = calculateTotal(x, y);
-    });
+const addbtn_ringfit = document.getElementById("ringfit-add");
+addbtn_ringfit.addEventListener("click", () => {
+    let i = parseInt(ringfitNum.textContent);
+    ringfitNum.innerHTML = i+1;
+    console.log("ringfitNum",ringfitNum.innerHTML);
+    let x = parseInt(ringfitNum.innerHTML);
+    let y = parseInt(switchNum.innerHTML);
+    numItems.innerText =  x + y;
+    total.innerText = calculateTotal(x, y);
 });
 
-document.addEventListener('turbolinks:load', () => {
-    const minusbtn_ringfit = document.getElementById("ringfit-minus");
-    minusbtn_ringfit.addEventListener("blur", ()=>{
-        let i = parseInt(ringfitNum.innerHTML);
-        if (i > 1) {
-            ringfitNum.innerHTML = i-1;
-        } else {
-            ringfitNum.innerHTML = 0;
-        };
-        let x = parseInt(ringfitNum.textContent);
-        let y = parseInt(switchNum.textContent);
-        numItems.innerText =  x + y;
-        total.innerText = calculateTotal(x, y);
-    });
-});
-
-
-// switch
-document.addEventListener('turbolinks:load', () => {
-    const addbtn_switch = document.getElementById("switch-add");
-    // addbtn_switch.addEventListener("click", addItems);
-    addbtn_switch.addEventListener("blur",()=>{
-    let i = parseInt(switchNum.textContent);
-    switchNum.textContent = i+1;
-    console.log("switchNum",switchNum.textContent);
-    // numItems.innerText = parseInt(ringfitNum.textContent) + parseInt(switchNum.textContent);
+const minusbtn_ringfit = document.getElementById("ringfit-minus");
+minusbtn_ringfit.addEventListener("click", ()=>{
+    let i = parseInt(ringfitNum.textContent);
+    if (i > 1) {
+        ringfitNum.innerHTML = i-1;
+    } else {
+        ringfitNum.innerHTML = 0;
+    };
     let x = parseInt(ringfitNum.textContent);
     let y = parseInt(switchNum.textContent);
     numItems.innerText =  x + y;
     total.innerText = calculateTotal(x, y);
-    });
 });
-document.addEventListener('turbolinks:load', () => {
-    const minusbtn_switch = document.getElementById("switch-minus");
-    minusbtn_switch.addEventListener("blur",()=>{
+
+
+// switch
+const addbtn_switch = document.getElementById("switch-add");
+addbtn_switch.addEventListener("click",()=>{
+    let i = parseInt(switchNum.textContent);
+    switchNum.textContent = i+1;
+    console.log("switchNum",switchNum.textContent);
+    let x = parseInt(ringfitNum.textContent);
+    let y = parseInt(switchNum.textContent);
+    numItems.innerText =  x + y;
+    total.innerText = calculateTotal(x, y);
+});
+
+const minusbtn_switch = document.getElementById("switch-minus");
+minusbtn_switch.addEventListener("click",()=>{
     let i = parseInt(switchNum.textContent);
     if (i > 1) {
         switchNum.textContent = i-1;
     } else {
         switchNum.textContent = 0;
     };
-});
 
-// numItems.innerText = parseInt(ringfitNum.textContent) + parseInt(switchNum.textContent);
-let x = parseInt(ringfitNum.textContent);
-let y = parseInt(switchNum.textContent);
-numItems.innerText =  x + y;
-total.innerText = calculateTotal(x, y);
+    let x = parseInt(ringfitNum.textContent);
+    let y = parseInt(switchNum.textContent);
+    numItems.innerText =  x + y;
+    total.innerText = calculateTotal(x, y);
 });
 
 
 // close notice
 let myNotice = document.getElementById("notice");
 
-myNotice.addEventListener("blur", (event)=>{
-console.log('notice clicked')
-console.log("target id:", event.target.id);
-if (event.target.id === "close"){
-    console.log(myNotice);
-    myNotice.style.display = "none";
-};
+myNotice.addEventListener("click", (event)=>{
+    console.log('notice clicked')
+    console.log("target id:", event.target.id);
+    if (event.target.id === "close"){
+        console.log(myNotice);
+        myNotice.style.display = "none";
+    };
 });
-// document.addEventListener('turbolinks:load', () => {
-//     let myNotice = document.getElementById("notice");
 
-//     myNotice.addEventListener("blur", (event)=>{
-//     console.log('notice clicked')
-//     console.log("target id:", event.target.id);
-//     if (event.target.id === "close"){
-//         console.log(myNotice);
-//         myNotice.style.display = "none";
-//     };
-//     });
-// });
 
 
 
