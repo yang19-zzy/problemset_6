@@ -3,10 +3,7 @@ import moment from "moment";
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-ReactDOM.render(
-    
-    document.getElementById('switchModifyNum')
-);
+
 
 setInterval(function() {
     const myColor = document.getElementById("notice");
@@ -31,6 +28,7 @@ return "$" + Math.round(a*78.80 + b*298.80);
 
 let ringfitNum = document.getElementById("ringfit-num");
 let switchNum = document.getElementById("switch-num");
+
 
 
 // ringfit
@@ -100,25 +98,32 @@ total.innerText = calculateTotal(x, y);
 
 
 // close notice
+let myNotice = document.getElementById("notice");
 
-document.addEventListener('turbolinks:load', () => {
-    let myNotice = document.getElementById("notice");
-
-    myNotice.addEventListener("blur", (event)=>{
-    console.log('notice clicked')
-    console.log("target id:", event.target.id);
-    if (event.target.id === "close"){
-        console.log(myNotice);
-        myNotice.style.display = "none";
-    };
-    });
+myNotice.addEventListener("blur", (event)=>{
+console.log('notice clicked')
+console.log("target id:", event.target.id);
+if (event.target.id === "close"){
+    console.log(myNotice);
+    myNotice.style.display = "none";
+};
 });
+// document.addEventListener('turbolinks:load', () => {
+//     let myNotice = document.getElementById("notice");
+
+//     myNotice.addEventListener("blur", (event)=>{
+//     console.log('notice clicked')
+//     console.log("target id:", event.target.id);
+//     if (event.target.id === "close"){
+//         console.log(myNotice);
+//         myNotice.style.display = "none";
+//     };
+//     });
+// });
 
 
 
-
-
-
+// promotion
 
 let promotionDate = moment("2021-03-10 00:00:00");
 // console.log(promotionDate);
